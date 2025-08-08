@@ -14,17 +14,61 @@
         <main id="main-menu">
             <h2>Kies 'n Planeet om te Verken!</h2>
             <div id="galaxy-map">
-                <div class="planet" id="meervoude-planet">
+                <div class="planet" id="meervoude-planet" data-topic="Meervoude">
                     <span>Meervoude</span>
+                    <span class="high-score"></span>
                 </div>
-                <div class="planet" id="verlede-tyd-planet">
+                <div class="planet" id="verlede-tyd-planet" data-topic="Verlede Tyd">
                     <span>Verlede Tyd</span>
+                    <span class="high-score"></span>
                 </div>
-                <div class="planet" id="alfabet-planet">
+                <div class="planet" id="alfabet-planet" data-topic="Alfabetiese Volgorde">
                     <span>Alfabetiese Volgorde</span>
+                    <span class="high-score"></span>
                 </div>
-                <div class="planet" id="voegwoorde-planet">
+                <div class="planet" id="voegwoorde-planet" data-topic="Voegwoorde">
                     <span>Voegwoorde</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="vraagwoorde-planet" data-topic="Vraagwoorde">
+                    <span>Vraagwoorde</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="voorsetsels-planet" data-topic="Voorsetsels">
+                    <span>Voorsetsels</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="verkleinwoorde-planet" data-topic="Verkleinwoorde">
+                    <span>Verkleinwoorde</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="trappe-planet" data-topic="Trappe van Vergelyking">
+                    <span>Trappe van Vergelyking</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="sinsoorte-planet" data-topic="Sinsoorte">
+                    <span>Sinsoorte</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="vorme-planet" data-topic="Manlike & Vroulike Vorme">
+                    <span>Manlike & Vroulike Vorme</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="versamelname-planet" data-topic="Versamelname">
+                    <span>Versamelname</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="antonieme-sinonieme-planet" data-topic="Antonieme & Sinonieme">
+                    <span>Antonieme & Sinonieme</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="toekomende-tyd-planet" data-topic="Toekomende Tyd">
+                    <span>Toekomende Tyd</span>
+                    <span class="high-score"></span>
+                </div>
+                <div class="planet" id="woordorde-planet" data-topic="Woordorde (STOMPI)">
+                    <span>Woordorde (STOMPI)</span>
+                    <span class="high-score"></span>
                 </div>
             </div>
         </main>
@@ -32,6 +76,8 @@
             <!-- Game modules will be loaded here -->
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -32,6 +32,13 @@ header h1 {
     color: #99ccff; /* Light blue for subtitles */
 }
 
+#game-stats {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+}
+
 #galaxy-map {
     display: flex;
     justify-content: center;
@@ -39,6 +46,7 @@ header h1 {
     gap: 50px;
     margin-top: 40px;
     padding: 20px;
+    flex-wrap: wrap; /* Allow planets to wrap to the next line */
 }
 
 .planet {
@@ -46,6 +54,7 @@ header h1 {
     height: 120px;
     border-radius: 50%;
     display: flex;
+    flex-direction: column; /* To stack the name and score */
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -54,6 +63,13 @@ header h1 {
     padding: 10px;
     font-weight: bold;
     animation: wobble 10s infinite ease-in-out;
+}
+
+.high-score {
+    font-size: 0.7em;
+    margin-top: 5px;
+    color: #ffd700; /* Gold color for high score */
+    font-weight: normal;
 }
 
 .planet:hover {
@@ -80,6 +96,56 @@ header h1 {
 #voegwoorde-planet {
     background-color: #cc99ff; /* Purple planet */
     border: 3px solid #e6d9ff;
+}
+
+#vraagwoorde-planet {
+    background-color: #ff9966; /* Orange planet */
+    border: 3px solid #ffddcc;
+}
+
+#voorsetsels-planet {
+    background-color: #00cc99; /* Teal planet */
+    border: 3px solid #99ffe6;
+}
+
+#verkleinwoorde-planet {
+    background-color: #ffcc00; /* Yellow planet - reusing for contrast */
+    border: 3px solid #ffff99;
+}
+
+#trappe-planet {
+    background-color: #ff66a3; /* Pink planet */
+    border: 3px solid #ffcce0;
+}
+
+#sinsoorte-planet {
+    background-color: #c2c2a3; /* Grey planet */
+    border: 3px solid #e0e0d1;
+}
+
+#vorme-planet {
+    background-color: #ffb366; /* Light orange planet */
+    border: 3px solid #ffdec2;
+}
+
+#versamelname-planet {
+    background-color: #ff4d4d; /* Bright red planet */
+    border: 3px solid #ffb3b3;
+}
+
+#antonieme-sinonieme-planet {
+    background-color: #6666ff; /* Bright blue planet */
+    border: 3px solid #b3b3ff;
+}
+
+#toekomende-tyd-planet {
+    background-color: #9933ff; /* Deep purple planet */
+    border: 3px solid #d9b3ff;
+}
+
+#woordorde-planet {
+    background-color: #ff3399; /* Hot pink planet */
+    border: 3px solid #ffb3d9;
 }
 
 .hidden {
