@@ -1,0 +1,237 @@
+body {
+    background-color: #000033; /* Dark blue for space */
+    color: #ffffff; /* White text */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Hide scrollbars from stars */
+}
+
+#game-container {
+    width: 90%;
+    max-width: 800px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #000044; /* A slightly lighter shade for the container */
+    z-index: 1; /* Ensure game container is above stars */
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ffcc00; /* Yellow for the title, like a star */
+    text-shadow: 2px 2px 4px #000;
+}
+
+#main-menu h2 {
+    font-size: 1.8em;
+    color: #99ccff; /* Light blue for subtitles */
+}
+
+#galaxy-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.planet {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    animation: wobble 10s infinite ease-in-out;
+}
+
+.planet:hover {
+    transform: scale(1.1) !important; /* Use important to override wobble transform */
+    box-shadow: 0 0 25px #fff;
+    animation-play-state: paused; /* Pause wobble on hover */
+}
+
+#meervoude-planet {
+    background-color: #ff6666; /* Red planet */
+    border: 3px solid #ffcccc;
+}
+
+#verlede-tyd-planet {
+    background-color: #66b3ff; /* Blue planet */
+    border: 3px solid #cce0ff;
+}
+
+#alfabet-planet {
+    background-color: #66ff99; /* Green planet */
+    border: 3px solid #ccffdd;
+}
+
+#voegwoorde-planet {
+    background-color: #cc99ff; /* Purple planet */
+    border: 3px solid #e6d9ff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Game View Styles --- */
+#game-view h2 {
+    font-size: 1.8em;
+    color: #99ccff;
+}
+
+#question-word {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffcc00;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#options-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.option {
+    background-color: #66b3ff;
+    color: white;
+    border: 2px solid #cce0ff;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.option:hover:not(:disabled) {
+    background-color: #88c5ff;
+}
+
+.option:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+.correct {
+    color: #66ff66; /* Bright Green */
+    animation: pop-in 0.5s ease-out;
+}
+
+.incorrect {
+    color: #ff6666; /* Bright Red */
+    animation: pop-in 0.5s ease-out;
+}
+
+#back-to-menu {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ffcc00;
+    color: #000033;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#back-to-menu:hover {
+    background-color: #ffe066;
+}
+
+/* --- Verlede Tyd Game Specific Styles --- */
+#sentence-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#answer-input {
+    font-size: 1.2em;
+    padding: 10px;
+    border: 2px solid #99ccff;
+    border-radius: 5px;
+    background-color: #000033;
+    color: #ffffff;
+    text-align: center;
+    width: 150px;
+}
+
+#submit-answer {
+    background-color: #66b3ff;
+    color: white;
+    border: 2px solid #cce0ff;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+#submit-answer:hover:not(:disabled) {
+    background-color: #88c5ff;
+}
+
+#submit-answer:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Animations --- */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+    animation: twinkle 5s infinite ease-in-out;
+    z-index: -1; /* Place stars behind everything */
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+}
+
+@keyframes pop-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.option:active:not(:disabled),
+#submit-answer:active:not(:disabled),
+#back-to-menu:active:not(:disabled) {
+    transform: translateY(2px);
+}
